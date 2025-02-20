@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Github on AireSein&#39;s Blog</title>
-    <link>https://qlsf.online/tags/github/</link>
+    <link>http://localhost:1313/tags/github/</link>
     <description>Recent content in Github on AireSein&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <managingEditor>airesein@gmail.com (AireSein)</managingEditor>
     <webMaster>airesein@gmail.com (AireSein)</webMaster>
     <copyright>© 2025 AireSein</copyright>
-    <lastBuildDate>Thu, 26 Sep 2024 18:52:30 +0800</lastBuildDate><atom:link href="https://qlsf.online/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 26 Sep 2024 18:52:30 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/github/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>学生如何使用邮箱及学信网在线验证获取 Github 学生包</title>
-      <link>https://qlsf.online/posts/21/first---%E5%89%AF%E6%9C%AC-2/</link>
+      <link>http://localhost:1313/posts/21/first---%E5%89%AF%E6%9C%AC-2/</link>
       <pubDate>Thu, 26 Sep 2024 18:52:30 +0800</pubDate>
       <author>airesein@gmail.com (AireSein)</author>
-      <guid>https://qlsf.online/posts/21/first---%E5%89%AF%E6%9C%AC-2/</guid>
+      <guid>http://localhost:1313/posts/21/first---%E5%89%AF%E6%9C%AC-2/</guid>
       <description></description>
       
     </item>
