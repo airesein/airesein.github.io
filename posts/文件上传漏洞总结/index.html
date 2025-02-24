@@ -15,7 +15,7 @@
   <meta name="keywords" content="周报, 文件上传, 漏洞, week4, " />
   
   
-  <link rel="canonical" href="https://qlsf.online/posts/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/text_post/" />
+  <link rel="canonical" href="https://qlsf.online/posts/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/" />
   
   
   
@@ -69,7 +69,7 @@
   
   
   
-  <meta property="og:url" content="https://qlsf.online/posts/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/text_post/">
+  <meta property="og:url" content="https://qlsf.online/posts/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/">
   <meta property="og:site_name" content="AireSein&#39;s Blog">
   <meta property="og:title" content="文件上传漏洞总结">
   <meta property="og:description" content="总结的笔记">
@@ -99,7 +99,7 @@
     "description": "总结的笔记",
     
     "inLanguage": "zh-cn",
-    "url" : "https:\/\/qlsf.online\/posts\/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93\/text_post\/",
+    "url" : "https:\/\/qlsf.online\/posts\/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93\/",
     "author" : {
       "@type": "Person",
       "name": "AireSein"
@@ -113,7 +113,7 @@
     "keywords": ["周报","文件上传","漏洞","week4"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1863"
+    "wordCount": "1889"
   }]
   </script>
 
@@ -564,7 +564,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-02-14T00:00:00&#43;00:00">2025 年 2 月 14 日</time><span class="px-2 text-primary-500">&middot;</span><span>1863 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">4 分钟</span><span class="px-2 text-primary-500">&middot;</span>
+  <time datetime="2025-02-14T00:00:00&#43;00:00">2025 年 2 月 14 日</time><span class="px-2 text-primary-500">&middot;</span><span>1889 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">4 分钟</span><span class="px-2 text-primary-500">&middot;</span>
 
 
 <script type="text/javascript" src="/js/zen-mode.min.eea5245cf9244ecbdf2c150d1c8833226c1541cadf6e98f63a7c9192b1a3676df2c3ec603b14f4cfaaa53971fd9d8955640c0f405bf3de2b43ee7a5fb29ae721.js" integrity="sha512-7qUkXPkkTsvfLBUNHIgzImwVQcrfbpj2OnyRkrGjZ23yw&#43;xgOxT0z6qlOXH9nYlVZAwPQFvz3itD7npfsprnIQ=="></script>
@@ -773,6 +773,8 @@
     class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
+    <li><a href="#测试">测试</a></li>
+    <li><a href="#测试-1">测试</a></li>
     <li><a href="#成因">成因</a></li>
     <li><a href="#文件上传漏洞的类型">文件上传漏洞的类型</a></li>
     <li><a href="#一句话木马php">一句话木马（php）</a></li>
@@ -818,6 +820,8 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
+    <li><a href="#测试">测试</a></li>
+    <li><a href="#测试-1">测试</a></li>
     <li><a href="#成因">成因</a></li>
     <li><a href="#文件上传漏洞的类型">文件上传漏洞的类型</a></li>
     <li><a href="#一句话木马php">一句话木马（php）</a></li>
@@ -934,6 +938,32 @@
 
         <div class="article-content max-w-prose mb-20">
           
+
+<h1 class="relative group">测试 
+    <div id="%E6%B5%8B%E8%AF%95" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E6%B5%8B%E8%AF%95" aria-label="锚点">#</a>
+    </span>        
+    
+</h1>
+<p>!()[https://download.zoho.com.cn/v1/workdrive/previewdata/u4whz1f7f6608307f4c0f909df979316e8a97?orig=true&amp;version=1.0]
+<img src="https://download.zoho.com.cn/v1/workdrive/previewdata/u4whz1f7f6608307f4c0f909df979316e8a97?orig=true&version=1.0" title="" alt="" ></p>
+
+
+<h1 class="relative group">测试 
+    <div id="%E6%B5%8B%E8%AF%95-1" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E6%B5%8B%E8%AF%95-1" aria-label="锚点">#</a>
+    </span>        
+    
+</h1>
+
 
 <h1 class="relative group">成因 
     <div id="%E6%88%90%E5%9B%A0" class="anchor"></div>
@@ -1324,6 +1354,90 @@
 <img src="https://previewengine.zohopublic.com.cn/image/WD/yhj4j843256740d574cdf9260cff3222412fc" title="" alt="" width="789">
 <p>连接，获取flag</p>
 <img src="https://previewengine.zohopublic.com.cn/image/WD/yhj4j0dd427f3971e4e79b052b10595beb59a" title="" alt="" width="685">
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="img/%E3%80%90%E5%93%B2%E9%A3%8E%E5%A3%81%E7%BA%B8%E3%80%91%E4%BA%8C%E6%AC%A1%E5%85%83-%E4%BA%BA%E7%89%A9%E5%BD%A2%E8%B1%A1.png" alt="alt text" />
+      
+    </figure>
+</p>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="img/%E3%80%90%E5%93%B2%E9%A3%8E%E5%A3%81%E7%BA%B8%E3%80%91%E4%BA%91%E6%9C%B5-%E5%A4%A7%E5%9C%BA%E6%99%AF-%E5%A4%A7%E6%A1%A5.png" alt="alt text" />
+      
+    </figure>
+</p>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="img/%E3%80%90%E5%93%B2%E9%A3%8E%E5%A3%81%E7%BA%B8%E3%80%91%E5%AE%89%E9%80%82-%E6%98%9F%E7%A9%BA-%E6%A2%A6%E5%B9%BB.png" alt="alt text" />
+      
+    </figure>
+</p>
+<p>进行时的法则
+<strong>是什么</strong></p>
+<p>死的的吗不换</p>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="%E5%A4%B4%E5%83%8F.png" alt="alt text" />
+      
+    </figure>
+</p>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="fav-1.png" alt="alt text" />
+      
+    </figure>
+</p>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="fav-2.png" alt="fav.png" />
+      
+    </figure>
+</p>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="fav-3.png" alt="alt text" />
+      
+    </figure>
+</p>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="english-2.jpg" alt="alt text" />
+      
+    </figure>
+</p>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="english-3.jpg" alt="alt text" />
+      
+    </figure>
+</p>
+<p>我是</p>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="english-4.jpg" alt="我的" />
+      
+    </figure>
+</p>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="english-5.jpg" alt="alt text" />
+      
+    </figure>
+</p>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="image.png" alt="alt text" />
+      
+    </figure>
+</p>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="image-2.png" alt="alt text" />
+      
+    </figure>
+</p>
+<p>我的</p>
+
           
           
           
@@ -1336,263 +1450,6 @@
 
         
 
-
-<h2 class="mt-8 text-2xl font-extrabold mb-10">相关文章</h2>
-<section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-  
-  
-
-  <a href="/posts/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/" class="min-w-full">
-    
-    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
-
-      <div class="px-6 py-4">
-
-        
-        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/posts/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/">文件上传漏洞总结</div>
-        
-
-        <div class="text-sm text-neutral-500 dark:text-neutral-400">
-          
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  <time datetime="2025-02-14T00:00:00&#43;00:00">2025 年 2 月 14 日</time><span class="px-2 text-primary-500">&middot;</span><span>1889 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">4 分钟</span>
-  
-
-  
-  
-</div>
-
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  
-  
-  
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/ctf/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    CTF
-  </span>
-</span>
-  </span>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E5%91%A8%E6%8A%A5/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    周报
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    文件上传
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E6%BC%8F%E6%B4%9E/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    漏洞
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/week4/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Week4
-  </span>
-</span>
-  </span>
-  
-  
-  
-  
-</div>
-
-
-
-
-        </div>
-
-        
-      </div>
-      <div class="px-6 pt-4 pb-2">
-
-      </div>
-    </div>
-  </a>
-
-  
-  
-
-  <a href="/posts/%E5%BB%BA%E7%AB%99%E4%B8%AD%E6%89%80%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/%E5%BB%BA%E7%AB%99%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/" class="min-w-full">
-    
-    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
-
-      <div class="px-6 py-4">
-
-        
-        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/posts/%E5%BB%BA%E7%AB%99%E4%B8%AD%E6%89%80%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/%E5%BB%BA%E7%AB%99%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/">在建站中遇到的一些问题</div>
-        
-
-        <div class="text-sm text-neutral-500 dark:text-neutral-400">
-          
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  <time datetime="2025-02-11T00:00:00&#43;00:00">2025 年 2 月 11 日</time><span class="px-2 text-primary-500">&middot;</span><span>398 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">1 分钟</span>
-  
-
-  
-  
-</div>
-
-
-
-
-
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  
-  
-  
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/%E5%BB%BA%E7%AB%99/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    建站
-  </span>
-</span>
-  </span>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/blowfish/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Blowfish
-  </span>
-</span>
-  </span>
-  
-  
-  
-  
-</div>
-
-
-
-
-        </div>
-
-        
-      </div>
-      <div class="px-6 pt-4 pb-2">
-
-      </div>
-    </div>
-  </a>
-
-  
-</section>
 
   
       </div>
@@ -1605,8 +1462,8 @@
           
         
       <script>
-        var oid = "views_posts\\文件上传漏洞总结\\text_post.md"
-        var oid_likes = "likes_posts\\文件上传漏洞总结\\text_post.md"
+        var oid = "views_posts\\文件上传漏洞总结.md"
+        var oid_likes = "likes_posts\\文件上传漏洞总结.md"
       </script>
       
       
@@ -1617,65 +1474,6 @@
   <footer class="pt-8 max-w-prose print:hidden">
 
     
-  
-    
-    
-    
-    <div class="pt-8">
-      <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
-      <div class="flex justify-between pt-3">
-        <span>
-          
-            <a class="flex group mr-3" href="/posts/%E5%BB%BA%E7%AB%99%E4%B8%AD%E6%89%80%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/%E5%BB%BA%E7%AB%99%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/">
-              <span
-                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
-                >&larr;</span
-              >
-              <span
-                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
-                >&rarr;</span
-              >
-              <span class="flex flex-col">
-                <span
-                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >在建站中遇到的一些问题</span
-                >
-                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
-                  
-                    <time datetime="2025-02-11T00:00:00&#43;00:00">2025 年 2 月 11 日</time>
-                  
-                </span>
-              </span>
-            </a>
-          
-        </span>
-        <span>
-          
-            <a class="flex text-right group ml-3" href="/posts/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/">
-              <span class="flex flex-col">
-                <span
-                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >文件上传漏洞总结</span
-                >
-                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
-                  
-                    <time datetime="2025-02-14T00:00:00&#43;00:00">2025 年 2 月 14 日</time>
-                  
-                </span>
-              </span>
-              <span
-                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
-                >&rarr;</span
-              >
-              <span
-                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
-                >&larr;</span
-              >
-            </a>
-          
-        </span>
-      </div>
-    </div>
   
 
 
