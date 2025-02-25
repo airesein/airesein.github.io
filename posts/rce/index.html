@@ -8,14 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>文件上传漏洞总结 &middot; AireSein&#39;s Blog</title>
-  <meta name="title" content="文件上传漏洞总结 &middot; AireSein&#39;s Blog" />
+  <title>RCE &middot; AireSein&#39;s Blog</title>
+  <meta name="title" content="RCE &middot; AireSein&#39;s Blog" />
   
-  <meta name="description" content="总结的笔记" />
-  <meta name="keywords" content="周报, 文件上传, 漏洞, week4, " />
+  <meta name="description" content="有关RCE的漏洞" />
+  <meta name="keywords" content="笔记, " />
   
   
-  <link rel="canonical" href="https://qlsf.online/posts/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/" />
+  <link rel="canonical" href="https://qlsf.online/posts/rce/" />
   
   
   
@@ -69,24 +69,21 @@
   
   
   
-  <meta property="og:url" content="https://qlsf.online/posts/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/">
+  <meta property="og:url" content="https://qlsf.online/posts/rce/">
   <meta property="og:site_name" content="AireSein&#39;s Blog">
-  <meta property="og:title" content="文件上传漏洞总结">
-  <meta property="og:description" content="总结的笔记">
+  <meta property="og:title" content="RCE">
+  <meta property="og:description" content="有关RCE的漏洞">
   <meta property="og:locale" content="zh_cn">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-02-14T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-02-14T00:00:00+00:00">
-    <meta property="article:tag" content="周报">
-    <meta property="article:tag" content="文件上传">
-    <meta property="article:tag" content="漏洞">
-    <meta property="article:tag" content="Week4">
+    <meta property="article:published_time" content="2025-02-23T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-02-23T00:00:00+00:00">
+    <meta property="article:tag" content="笔记">
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="文件上传漏洞总结">
-  <meta name="twitter:description" content="总结的笔记">
+  <meta name="twitter:title" content="RCE">
+  <meta name="twitter:description" content="有关RCE的漏洞">
 
   
   <script type="application/ld+json">
@@ -94,26 +91,26 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Posts",
-    "name": "文件上传漏洞总结",
-    "headline": "文件上传漏洞总结",
-    "description": "总结的笔记",
+    "name": "RCE",
+    "headline": "RCE",
+    "description": "有关RCE的漏洞",
     
     "inLanguage": "zh-cn",
-    "url" : "https:\/\/qlsf.online\/posts\/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93\/",
+    "url" : "https:\/\/qlsf.online\/posts\/rce\/",
     "author" : {
       "@type": "Person",
       "name": "AireSein"
     },
     "copyrightYear": "2025",
-    "dateCreated": "2025-02-14T00:00:00\u002b00:00",
-    "datePublished": "2025-02-14T00:00:00\u002b00:00",
+    "dateCreated": "2025-02-23T00:00:00\u002b00:00",
+    "datePublished": "2025-02-23T00:00:00\u002b00:00",
     
-    "dateModified": "2025-02-14T00:00:00\u002b00:00",
+    "dateModified": "2025-02-23T00:00:00\u002b00:00",
     
-    "keywords": ["周报","文件上传","漏洞","week4"],
+    "keywords": ["笔记"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1863"
+    "wordCount": "778"
   }]
   </script>
 
@@ -517,7 +514,7 @@
   <header id="single_header" class="mt-5 max-w-prose">
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      文件上传漏洞总结
+      RCE
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -564,7 +561,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2025-02-14T00:00:00&#43;00:00">2025 年 2 月 14 日</time><span class="px-2 text-primary-500">&middot;</span><span>1863 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">4 分钟</span><span class="px-2 text-primary-500">&middot;</span>
+  <time datetime="2025-02-23T00:00:00&#43;00:00">2025 年 2 月 23 日</time><span class="px-2 text-primary-500">&middot;</span><span>778 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">2 分钟</span><span class="px-2 text-primary-500">&middot;</span>
 
 
 <script type="text/javascript" src="/js/zen-mode.min.eea5245cf9244ecbdf2c150d1c8833226c1541cadf6e98f63a7c9192b1a3676df2c3ec603b14f4cfaaa53971fd9d8955640c0f405bf3de2b43ee7a5fb29ae721.js" integrity="sha512-7qUkXPkkTsvfLBUNHIgzImwVQcrfbpj2OnyRkrGjZ23yw&#43;xgOxT0z6qlOXH9nYlVZAwPQFvz3itD7npfsprnIQ=="></script>
@@ -619,34 +616,10 @@
   
   
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E5%91%A8%E6%8A%A5/&#34;,'_self');return false;">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E7%AC%94%E8%AE%B0/&#34;,'_self');return false;">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    周报
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    文件上传
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E6%BC%8F%E6%B4%9E/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    漏洞
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/week4/&#34;,'_self');return false;">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Week4
+    笔记
   </span>
 </span>
   </span>
@@ -773,34 +746,45 @@
     class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#成因">成因</a></li>
-    <li><a href="#文件上传漏洞的类型">文件上传漏洞的类型</a></li>
-    <li><a href="#一句话木马php">一句话木马（php）</a></li>
-    <li><a href="#工具">工具</a></li>
-    <li><a href="#文件上传">文件上传</a>
+    <li><a href="#rce">RCE</a>
       <ul>
-        <li><a href="#前端验证">前端验证</a>
+        <li><a href="#eval执行">eval执行</a>
           <ul>
-            <li><a href="#原理">原理</a></li>
+            <li><a href="#知识">知识</a></li>
+            <li><a href="#题目">题目</a></li>
+            <li><a href="#解题">解题</a></li>
           </ul>
         </li>
-        <li><a href="#htaccess利用"><strong>.htaccess利用</strong></a></li>
-        <li><a href="#mime">MIME</a></li>
-        <li><a href="#00截断"><strong>%00截断</strong></a>
+        <li><a href="#文件包含">文件包含</a>
           <ul>
-            <li><a href="#原理-1">原理：</a></li>
+            <li><a href="#题目-1">题目</a></li>
+            <li><a href="#解题-1">解题</a></li>
           </ul>
         </li>
-        <li><a href="#双写绕过">双写绕过</a>
+        <li><a href="#phpinput">php://input</a>
           <ul>
-            <li><a href="#原理-2">原理：</a></li>
-            <li><a href="#例题">例题</a></li>
+            <li><a href="#知识-1">知识</a></li>
+            <li><a href="#题目-2">题目</a></li>
+            <li><a href="#解题-2">解题</a></li>
           </ul>
         </li>
-        <li><a href="#文件头检查">文件头检查</a>
+        <li><a href="#读取源代码">读取源代码</a>
           <ul>
-            <li><a href="#文件头">文件头</a></li>
-            <li><a href="#例题-1">例题</a></li>
+            <li><a href="#知识-2">知识</a></li>
+            <li><a href="#题目-3">题目</a></li>
+            <li><a href="#解题-3">解题</a></li>
+          </ul>
+        </li>
+        <li><a href="#远程包含">远程包含</a>
+          <ul>
+            <li><a href="#题目-4">题目</a></li>
+            <li><a href="#解题-4">解题</a></li>
+          </ul>
+        </li>
+        <li><a href="#命令注入">命令注入</a>
+          <ul>
+            <li><a href="#题目-5">题目</a></li>
+            <li><a href="#解题-5">解题</a></li>
           </ul>
         </li>
       </ul>
@@ -818,34 +802,45 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#成因">成因</a></li>
-    <li><a href="#文件上传漏洞的类型">文件上传漏洞的类型</a></li>
-    <li><a href="#一句话木马php">一句话木马（php）</a></li>
-    <li><a href="#工具">工具</a></li>
-    <li><a href="#文件上传">文件上传</a>
+    <li><a href="#rce">RCE</a>
       <ul>
-        <li><a href="#前端验证">前端验证</a>
+        <li><a href="#eval执行">eval执行</a>
           <ul>
-            <li><a href="#原理">原理</a></li>
+            <li><a href="#知识">知识</a></li>
+            <li><a href="#题目">题目</a></li>
+            <li><a href="#解题">解题</a></li>
           </ul>
         </li>
-        <li><a href="#htaccess利用"><strong>.htaccess利用</strong></a></li>
-        <li><a href="#mime">MIME</a></li>
-        <li><a href="#00截断"><strong>%00截断</strong></a>
+        <li><a href="#文件包含">文件包含</a>
           <ul>
-            <li><a href="#原理-1">原理：</a></li>
+            <li><a href="#题目-1">题目</a></li>
+            <li><a href="#解题-1">解题</a></li>
           </ul>
         </li>
-        <li><a href="#双写绕过">双写绕过</a>
+        <li><a href="#phpinput">php://input</a>
           <ul>
-            <li><a href="#原理-2">原理：</a></li>
-            <li><a href="#例题">例题</a></li>
+            <li><a href="#知识-1">知识</a></li>
+            <li><a href="#题目-2">题目</a></li>
+            <li><a href="#解题-2">解题</a></li>
           </ul>
         </li>
-        <li><a href="#文件头检查">文件头检查</a>
+        <li><a href="#读取源代码">读取源代码</a>
           <ul>
-            <li><a href="#文件头">文件头</a></li>
-            <li><a href="#例题-1">例题</a></li>
+            <li><a href="#知识-2">知识</a></li>
+            <li><a href="#题目-3">题目</a></li>
+            <li><a href="#解题-3">解题</a></li>
+          </ul>
+        </li>
+        <li><a href="#远程包含">远程包含</a>
+          <ul>
+            <li><a href="#题目-4">题目</a></li>
+            <li><a href="#解题-4">解题</a></li>
+          </ul>
+        </li>
+        <li><a href="#命令注入">命令注入</a>
+          <ul>
+            <li><a href="#题目-5">题目</a></li>
+            <li><a href="#解题-5">解题</a></li>
           </ul>
         </li>
       </ul>
@@ -935,278 +930,49 @@
         <div class="article-content max-w-prose mb-20">
           
 
-<h1 class="relative group">成因 
-    <div id="%E6%88%90%E5%9B%A0" class="anchor"></div>
+<h1 class="relative group">RCE 
+    <div id="rce" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E6%88%90%E5%9B%A0" aria-label="锚点">#</a>
+            style="text-decoration-line: none !important;" href="#rce" aria-label="锚点">#</a>
     </span>        
     
 </h1>
-<p>上传文件时没有对上传的文件进行严格的验证和过滤，容易造成上传任意文件的情况，从而使得攻击者绕过上传机制上传恶意代码</p>
-<p>恶意代码文件就是<strong>php asp aspx jsp</strong>等，也被称为<strong>webshell</strong></p>
-
-
-<h1 class="relative group">文件上传漏洞的类型 
-    <div id="%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E7%9A%84%E7%B1%BB%E5%9E%8B" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E7%9A%84%E7%B1%BB%E5%9E%8B" aria-label="锚点">#</a>
-    </span>        
-    
-</h1>
-<ol>
-<li>
-<p><strong>前端验证</strong></p>
-</li>
-<li>
-<p><strong>.htaccess利用</strong></p>
-</li>
-<li>
-<p><strong>MIME类型绕过</strong></p>
-</li>
-<li>
-<p><strong>%00截断</strong></p>
-</li>
-<li>
-<p><strong>双写绕过</strong></p>
-</li>
-<li>
-<p><strong>文件头检查</strong></p>
-</li>
-</ol>
-<p>。。。</p>
-<p>注：1~4的例题在周报3中</p>
-
-
-<h1 class="relative group">一句话木马（php） 
-    <div id="%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%9C%A8%E9%A9%ACphp" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%9C%A8%E9%A9%ACphp" aria-label="锚点">#</a>
-    </span>        
-    
-</h1>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span> <span class="o">@</span><span class="k">eval</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s2">&#34;ctf&#34;</span><span class="p">]);</span><span class="cp">?&gt;</span><span class="err">
-</span></span></span></code></pre></div><ul>
-<li>
-<p><code>&lt;?php</code>：这是 PHP 代码的起始标记，表明从这里开始是 PHP 代码区域。</p>
-</li>
-<li>
-<p><code>@</code>：在 PHP 中，<code>@</code> 是错误抑制符,不报错。</p>
-</li>
-<li>
-<p><code>eval()</code>：是 PHP 的一个内置函数，它的作用是把字符串作为 PHP 代码来执行。</p>
-</li>
-<li>
-<p><code>$_POST[&quot;ctf&quot;]</code>：<code>$_POST</code> 是 PHP 的一个超全局变量，用于接收通过 POST 方法提交的数据。</p>
-</li>
-<li>
-<p>其中的ctf就是一句话的密码</p>
-</li>
-</ul>
-<p>也可以把$_POST换为$_GET，用get的方式提交</p>
-
-
-<h1 class="relative group">工具 
-    <div id="%E5%B7%A5%E5%85%B7" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%B7%A5%E5%85%B7" aria-label="锚点">#</a>
-    </span>        
-    
-</h1>
-<p>上传一句话木马后，需要借助特定工具与木马建立连接，以执行命令、获取信息等。常用的操作一句话木马的工具：<strong>菜刀（中国菜刀）、蚁剑、冰蝎、哥斯拉</strong></p>
-
-
-<h1 class="relative group">文件上传 
-    <div id="%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0" aria-label="锚点">#</a>
-    </span>        
-    
-</h1>
-<p><strong>表单简单举例：</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&#34;&#34;</span> <span class="na">method</span><span class="o">=</span><span class="s">&#34;post&#34;</span> <span class="na">enctype</span><span class="o">=</span><span class="s">&#34;multipart/form-data&#34;</span> <span class="na">onsubmit</span><span class="o">=</span><span class="s">&#34;return checkfilesuffix()&#34;</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">       <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;file&#34;</span><span class="p">&gt;</span>Filename:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">       <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;file&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;file&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;file&#34;</span> <span class="p">/&gt;</span>
-</span></span><span class="line"><span class="cl">       <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;submit&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;submit&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;Submit&#34;</span> <span class="p">/&gt;</span>
-</span></span><span class="line"><span class="cl"> <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
-</span></span></code></pre></div><ul>
-<li>
-<p><code>action=&quot;&quot;</code>：表示表单数据将提交到当前页面。如果需要将数据提交到其他页面，可以在此处填写目标页面的 URL。</p>
-</li>
-<li>
-<p><code>method=&quot;post&quot;</code>：提交方式为 POST</p>
-</li>
-<li>
-<p><code>enctype=&quot;multipart/form-data&quot;</code>：这是文件上传表单必须设置的属性，用于指定表单数据的编码类型，以支持二进制文件的上传。</p>
-</li>
-</ul>
-<p><em>需要特别注意<strong>请求头</strong>中的<strong>Content-Type，它是用来告诉后端我们的数据类型和编码方式的</strong></em></p>
-
-
-<h2 class="relative group">前端验证 
-    <div id="%E5%89%8D%E7%AB%AF%E9%AA%8C%E8%AF%81" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%89%8D%E7%AB%AF%E9%AA%8C%E8%AF%81" aria-label="锚点">#</a>
-    </span>        
-    
-</h2>
-
-
-<h3 class="relative group">原理 
-    <div id="%E5%8E%9F%E7%90%86" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%8E%9F%E7%90%86" aria-label="锚点">#</a>
-    </span>        
-    
-</h3>
-<p><strong>校验是通过前端javascript代码完成的，可以对前端javascript进行修改或者是通过抓包篡改上传的文件。</strong></p>
-
-
-<h2 class="relative group"><strong>.htaccess利用</strong> 
-    <div id="htaccess%E5%88%A9%E7%94%A8" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#htaccess%E5%88%A9%E7%94%A8" aria-label="锚点">#</a>
-    </span>        
-    
-</h2>
+<p>RCE是什么？</p>
 <blockquote>
-<p>htaccess文件是<a href="https://baike.baidu.com/item/Apache/0?fromModule=lemma_inlink" target="_blank">Apache</a>服务器中的一个配置文件，它负责相关目录下的网页配置。通过htaccess文件，可以帮我们实现：网页<a href="https://baike.baidu.com/item/301%E9%87%8D%E5%AE%9A%E5%90%91/1135400?fromModule=lemma_inlink" target="_blank">301重定向</a>、自定义<a href="https://baike.baidu.com/item/404%E9%94%99%E8%AF%AF%E9%A1%B5%E9%9D%A2/583066?fromModule=lemma_inlink" target="_blank">404错误页面</a>、改变<a href="https://baike.baidu.com/item/%E6%96%87%E4%BB%B6%E6%89%A9%E5%B1%95%E5%90%8D/1270230?fromModule=lemma_inlink" target="_blank">文件扩展名</a>、允许/阻止特定的用户或者目录的访问、禁止目录列表、配置默认文档等功能。</p>
-<p>——百度百科</p></blockquote>
+<p><strong>RCE</strong>，即<strong>远程代码执行</strong>，是一种严重的安全漏洞。它允许攻击者在目标服务器上远程执行任意代码或操作系统命令，从而可能完全控制受影响的系统。</p></blockquote>
 
 
-<h2 class="relative group">MIME 
-    <div id="mime" class="anchor"></div>
+<h2 class="relative group">eval执行 
+    <div id="eval%E6%89%A7%E8%A1%8C" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#mime" aria-label="锚点">#</a>
-    </span>        
-    
-</h2>
-<p>MIME 类型是一种标准化的标识方式，<strong>用来描述数据的类型</strong></p>
-<p>MIME 类型通用结构：type/subtype</p>
-<p>例如：</p>
-<ul>
-<li>
-<p><strong>text/plain</strong> 表示文本文件的默认值。</p>
-</li>
-<li>
-<p><strong>application/octet-stream</strong> 表示所有其他情况的默认值。</p>
-</li>
-<li>
-<p>超文本标记语言文本 <strong>.html、.html</strong>：<strong>text/html</strong></p>
-</li>
-<li>
-<p>普通文本 <strong>.txt</strong>： <strong>text/plain</strong></p>
-</li>
-</ul>
-<p>上文提到的<strong>Content-Type</strong>的核心就是MIME类型</p>
-
-
-<h2 class="relative group"><strong>%00截断</strong> 
-    <div id="00%E6%88%AA%E6%96%AD" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#00%E6%88%AA%E6%96%AD" aria-label="锚点">#</a>
+            style="text-decoration-line: none !important;" href="#eval%E6%89%A7%E8%A1%8C" aria-label="锚点">#</a>
     </span>        
     
 </h2>
 
 
-<h3 class="relative group">原理： 
-    <div id="%E5%8E%9F%E7%90%86-1" class="anchor"></div>
+<h3 class="relative group">知识 
+    <div id="%E7%9F%A5%E8%AF%86" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%8E%9F%E7%90%86-1" aria-label="锚点">#</a>
+            style="text-decoration-line: none !important;" href="#%E7%9F%A5%E8%AF%86" aria-label="锚点">#</a>
     </span>        
     
 </h3>
-<p>在 php&lt;5.3.4 版本中，存储文件时处理文件名的函数认为0x00是终止符。于是在读文件名的时候，当函数读到 0x00(%00) 时，会认为已经结束。</p>
+<p>eval函数的语法</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">eval</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$code</span><span class="p">)</span><span class="o">:</span> <span class="nx">mixed</span><span class="p">;</span>
+</span></span></code></pre></div><p><code>$code</code> 是一个字符串，且必须是有效的 PHP 代码，必须以分号 <code>;</code> 结尾，除非代码是一个代码块。</p>
 
 
-<h2 class="relative group">双写绕过 
-    <div id="%E5%8F%8C%E5%86%99%E7%BB%95%E8%BF%87" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%8F%8C%E5%86%99%E7%BB%95%E8%BF%87" aria-label="锚点">#</a>
-    </span>        
-    
-</h2>
-
-
-<h3 class="relative group">原理： 
-    <div id="%E5%8E%9F%E7%90%86-2" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%8E%9F%E7%90%86-2" aria-label="锚点">#</a>
-    </span>        
-    
-</h3>
-<p>网站后端代码中，如果上传的文件后缀名在黑名单中，就会将其替换为空</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$blacklist</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">&#34;php&#34;</span><span class="p">,</span> <span class="s2">&#34;php5&#34;</span><span class="p">,</span> <span class="s2">&#34;php4&#34;</span><span class="p">,</span> <span class="s2">&#34;php3&#34;</span><span class="p">,</span> <span class="s2">&#34;phtml&#34;</span><span class="p">,</span> <span class="s2">&#34;pht&#34;</span><span class="p">,</span> <span class="s2">&#34;jsp&#34;</span><span class="p">,</span> <span class="s2">&#34;jspa&#34;</span><span class="p">,</span> <span class="s2">&#34;jspx&#34;</span><span class="p">,</span> <span class="s2">&#34;jsw&#34;</span><span class="p">,</span> <span class="s2">&#34;jsv&#34;</span><span class="p">,</span> <span class="s2">&#34;jspf&#34;</span><span class="p">,</span> <span class="s2">&#34;jtml&#34;</span><span class="p">,</span> <span class="s2">&#34;asp&#34;</span><span class="p">,</span> <span class="s2">&#34;aspx&#34;</span><span class="p">,</span> <span class="s2">&#34;asa&#34;</span><span class="p">,</span> <span class="s2">&#34;asax&#34;</span><span class="p">,</span> <span class="s2">&#34;ascx&#34;</span><span class="p">,</span> <span class="s2">&#34;ashx&#34;</span><span class="p">,</span> <span class="s2">&#34;asmx&#34;</span><span class="p">,</span> <span class="s2">&#34;cer&#34;</span><span class="p">,</span> <span class="s2">&#34;swf&#34;</span><span class="p">,</span> <span class="s2">&#34;htaccess&#34;</span><span class="p">,</span> <span class="s2">&#34;ini&#34;</span><span class="p">);</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$name</span> <span class="o">=</span> <span class="nx">str_ireplace</span><span class="p">(</span><span class="nv">$blacklist</span><span class="p">,</span> <span class="s2">&#34;&#34;</span><span class="p">,</span> <span class="nv">$name</span><span class="p">);</span>
-</span></span></code></pre></div><ul>
-<li>
-<p><code>str_ireplace()</code> 是一个 PHP 函数，用于在字符串中进行不区分大小写的替换操作。</p>
-</li>
-<li>
-<p>第一个参数 <code>$blacklist</code> 是要查找并替换的字符串数组，即黑名单中的扩展名。</p>
-</li>
-<li>
-<p>第二个参数 <code>&quot;&quot;</code> 表示将查找到的字符串替换为空字符串。</p>
-</li>
-<li>
-<p>第三个参数 <code>$name</code> 是要进行替换操作的目标字符串，即前面提取出来的文件名。</p>
-</li>
-</ul>
-<p><strong>这行代码的作用是将文件名中包含的黑名单扩展名替换为空字符串</strong>。</p>
-
-
-<h3 class="relative group">例题 
-    <div id="%E4%BE%8B%E9%A2%98" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E4%BE%8B%E9%A2%98" aria-label="锚点">#</a>
-    </span>        
-    
-</h3>
-
-
-<h4 class="relative group">题目： 
+<h3 class="relative group">题目 
     <div id="%E9%A2%98%E7%9B%AE" class="anchor"></div>
     
     <span
@@ -1215,12 +981,22 @@
             style="text-decoration-line: none !important;" href="#%E9%A2%98%E7%9B%AE" aria-label="锚点">#</a>
     </span>        
     
-</h4>
-<img src="https://previewengine.zohopublic.com.cn/image/WD/yhj4j12200ea74f7e43f3be10b336ef10a5b0" title="" alt="" width="779">
-<img title="" src="https://previewengine.zohopublic.com.cn/image/WD/yhj4jc759033a4ea84036b141b16435453231" alt="" width="781">
+</h3>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://cdn.jsdelivr.net/gh/airesein/codr/RCE/%E9%A2%98%E7%9B%AE.png" alt="" />
+    
+  </figure>
+</p>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://cdn.jsdelivr.net/gh/airesein/codr/RCE/%E6%BA%90%E7%A0%81.png" alt="" />
+    
+  </figure>
+</p>
 
 
-<h4 class="relative group">解题： 
+<h3 class="relative group">解题 
     <div id="%E8%A7%A3%E9%A2%98" class="anchor"></div>
     
     <span
@@ -1229,61 +1005,43 @@
             style="text-decoration-line: none !important;" href="#%E8%A7%A3%E9%A2%98" aria-label="锚点">#</a>
     </span>        
     
-</h4>
-<p>先看源码</p>
-<img title="" src="https://previewengine.zohopublic.com.cn/image/WD/yhj4j24fef31a1bb2441c84544d4999d6dd22" alt="" width="1177">
-<p>在注释中的提示中发现，后端使用了<code>str_ireplace()</code>函数把黑名单中的后缀名替换为空</p>
-<p>上传一个文件名为w.pphphp的文件，内含一句话木马</p>
-<img src="https://previewengine.zohopublic.com.cn/image/WD/yhj4j73a9b395982a40c6831cdfddfcfd84f7" title="" alt="" width="732">
-<p>后端自动将其中的php去掉了，变成了w.php</p>
-<p>接着打开蚁剑，得到flag</p>
-<img src="https://previewengine.zohopublic.com.cn/image/WD/yhj4j1f292e57646747ada60435bfcc44bfd9" title="" alt="" width="979">
+</h3>
+<p>查看当前目录</p>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://cdn.jsdelivr.net/gh/airesein/codr/RCE/1-1.png" alt="" />
+    
+  </figure>
+</p>
+<p>没有看到flag，查看上一级的目录</p>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://cdn.jsdelivr.net/gh/airesein/codr/RCE/2-1.png" alt="" />
+    
+  </figure>
+</p>
+<p>发现当中有个falg_16134，进去</p>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://cdn.jsdelivr.net/gh/airesein/codr/RCE/3-1.png" alt="" />
+    
+  </figure>
+</p>
 
 
-<h2 class="relative group">文件头检查 
-    <div id="%E6%96%87%E4%BB%B6%E5%A4%B4%E6%A3%80%E6%9F%A5" class="anchor"></div>
+<h2 class="relative group">文件包含 
+    <div id="%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E6%96%87%E4%BB%B6%E5%A4%B4%E6%A3%80%E6%9F%A5" aria-label="锚点">#</a>
+            style="text-decoration-line: none !important;" href="#%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB" aria-label="锚点">#</a>
     </span>        
     
 </h2>
 
 
-<h3 class="relative group">文件头 
-    <div id="%E6%96%87%E4%BB%B6%E5%A4%B4" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E6%96%87%E4%BB%B6%E5%A4%B4" aria-label="锚点">#</a>
-    </span>        
-    
-</h3>
-<blockquote>
-<p>在每一个文件（包括图片，视频或其他的非ASCII文件）的开头（十六进制 表示）实际上都有一片区域来显示这个文件的实际用法，这就是文件头标志。 在计算机中，<strong>文件头是一段用来描述文件内容和格式的数据</strong>。 不同的文件格式有不同的文件头格式。 文件头内容通常包含文件的类型、版本、编码方式、文件大小等信息，以方便计算机识别和处理文件。</p></blockquote>
-<p>例如：</p>
-<p>jpg                    　　文件头：FFD8FF　　　　　　　　　　　　　　　　　　　　</p>
-<p>png                　　   文件头：89504E47　　　　　　　　　　　　　　　　　　　</p>
-<p>gif                        　文件头：47494638</p>
-<p>应用场景：当网站通过检查文件头的方式来判断文件类型时，可以在木马前添加合法的文件头</p>
-
-
-<h3 class="relative group">例题 
-    <div id="%E4%BE%8B%E9%A2%98-1" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E4%BE%8B%E9%A2%98-1" aria-label="锚点">#</a>
-    </span>        
-    
-</h3>
-
-
-<h4 class="relative group">题目： 
+<h3 class="relative group">题目 
     <div id="%E9%A2%98%E7%9B%AE-1" class="anchor"></div>
     
     <span
@@ -1292,12 +1050,22 @@
             style="text-decoration-line: none !important;" href="#%E9%A2%98%E7%9B%AE-1" aria-label="锚点">#</a>
     </span>        
     
-</h4>
-<img src="https://previewengine.zohopublic.com.cn/image/WD/yhj4j4bf710f7ace54430ab827dada5a8f34d" title="" alt="" width="789">
-<img src="https://previewengine.zohopublic.com.cn/image/WD/yhj4jcedcfb74edf04a768975a3c40b263693" title="" alt="" width="800">
+</h3>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://cdn.jsdelivr.net/gh/airesein/codr/RCE/1.png" alt="" />
+    
+  </figure>
+</p>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://cdn.jsdelivr.net/gh/airesein/codr/RCE/2.png" alt="" />
+    
+  </figure>
+</p>
 
 
-<h4 class="relative group">解题 
+<h3 class="relative group">解题 
     <div id="%E8%A7%A3%E9%A2%98-1" class="anchor"></div>
     
     <span
@@ -1306,24 +1074,327 @@
             style="text-decoration-line: none !important;" href="#%E8%A7%A3%E9%A2%98-1" aria-label="锚点">#</a>
     </span>        
     
-</h4>
-<p>先看源码</p>
-<img src="https://previewengine.zohopublic.com.cn/image/WD/yhj4jdd0cab288bf44b8d92d156262e58d463" title="" alt="" width="811">
-<p>一个普通的文件上传没啥特色，上传个文件试试</p>
-<img src="https://previewengine.zohopublic.com.cn/image/WD/yhj4j1c0fbabd46644c47b0e7b486d5ead174" title="" alt="" width="716">
-<p>只能上传<strong>jpeg、jpg、png、gif</strong>类型</p>
-<p>制作一个图片马</p>
-<p>随便找一张后缀为png的图片（不要太大），用记事本打开在最后面写上一句话木马，并将后缀改为php</p>
-<img src="https://previewengine.zohopublic.com.cn/image/WD/yhj4j26c940e404614abb9eeb1572cb0cdc3a" title="" alt="" width="514">
-<p>上传还是不行，还需要改一下包</p>
-<p>打开burp,开启拦截</p>
-<img src="https://previewengine.zohopublic.com.cn/image/WD/yhj4jd5c77c84d77f499a868cef36f2effe71" title="" alt="" width="1305">
-<p>将Content-Type的内容改一下， 换为image/png</p>
-<img src="https://previewengine.zohopublic.com.cn/image/WD/yhj4j43eff70576e5407585cd13060dc3a6a5" title="" alt="" width="550">
-<img src="https://previewengine.zohopublic.com.cn/image/WD/yhj4jd4b577dfe9334741b90a86aec99223c9" title="" alt="" width="791">
-<img src="https://previewengine.zohopublic.com.cn/image/WD/yhj4j843256740d574cdf9260cff3222412fc" title="" alt="" width="789">
-<p>连接，获取flag</p>
-<img src="https://previewengine.zohopublic.com.cn/image/WD/yhj4j0dd427f3971e4e79b052b10595beb59a" title="" alt="" width="685">
+</h3>
+<p>点开shell,是个一句话木马</p>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://cdn.jsdelivr.net/gh/airesein/codr/RCE/3.png" alt="" />
+    
+  </figure>
+</p>
+<p>题目不让输入flag，也提示了href=&ldquo;shell.txt&rdquo;，那么?file=shell.txt</p>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://cdn.jsdelivr.net/gh/airesein/codr/RCE/01.png" alt="" />
+    
+  </figure>
+</p>
+<p>接着用hcakbar</p>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://cdn.jsdelivr.net/gh/airesein/codr/RCE/02.png" alt="" />
+    
+  </figure>
+</p>
+
+
+<h2 class="relative group">php://input 
+    <div id="phpinput" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#phpinput" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+
+
+<h3 class="relative group">知识 
+    <div id="%E7%9F%A5%E8%AF%86-1" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E7%9F%A5%E8%AF%86-1" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<blockquote>
+<p><code>phpinfo()</code> 函数用于输出关于 PHP 配置的大量信息。这些信息涵盖了 PHP 版本、编译选项、服务器环境、PHP 扩展、PHP 常量等众多方面。</p>
+<p><code>php://</code> 是 PHP 提供的一种协议流包装器，它可以用于访问各种资源，例如标准输入输出、过滤器等。</p>
+<p><code>php://input</code> 是 PHP 中的一个只读流，允许直接访问 HTTP 请求体中的原始数据。</p></blockquote>
+
+
+<h3 class="relative group">题目 
+    <div id="%E9%A2%98%E7%9B%AE-2" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E9%A2%98%E7%9B%AE-2" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://cdn.jsdelivr.net/gh/airesein/codr/RCE/%E9%A2%98%E7%9B%AE2.png" alt="" />
+    
+  </figure>
+</p>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://cdn.jsdelivr.net/gh/airesein/codr/RCE/%E9%A2%98%E7%9B%AE1.png" alt="" />
+    
+  </figure>
+</p>
+
+
+<h3 class="relative group">解题 
+    <div id="%E8%A7%A3%E9%A2%98-2" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E8%A7%A3%E9%A2%98-2" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>伪协议，查看phpinfo,php://input是能用的</p>
+<p>使用burp伪造，先看一下上级目录</p>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://cdn.jsdelivr.net/gh/airesein/codr/RCE/%E5%81%9A1.png" alt="" />
+    
+  </figure>
+</p>
+<p>发现有flag</p>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://cdn.jsdelivr.net/gh/airesein/codr/RCE/%E5%81%9A2.png" alt="" />
+    
+  </figure>
+</p>
+<p>进去，获得flag</p>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://cdn.jsdelivr.net/gh/airesein/codr/RCE/%E5%81%9A3.png" alt="" />
+    
+  </figure>
+</p>
+
+
+<h2 class="relative group">读取源代码 
+    <div id="%E8%AF%BB%E5%8F%96%E6%BA%90%E4%BB%A3%E7%A0%81" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E8%AF%BB%E5%8F%96%E6%BA%90%E4%BB%A3%E7%A0%81" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+
+
+<h3 class="relative group">知识 
+    <div id="%E7%9F%A5%E8%AF%86-2" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E7%9F%A5%E8%AF%86-2" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<blockquote>
+<p>php://filter/[读|写|两者兼有的过滤器链]/resource=要处理的资源</p></blockquote>
+
+
+<h3 class="relative group">题目 
+    <div id="%E9%A2%98%E7%9B%AE-3" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E9%A2%98%E7%9B%AE-3" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://cdn.jsdelivr.net/gh/airesein/codr/RCE/zz1.png" alt="" />
+    
+  </figure>
+</p>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://cdn.jsdelivr.net/gh/airesein/codr/RCE/zz2.png" alt="" />
+    
+  </figure>
+</p>
+
+
+<h3 class="relative group">解题 
+    <div id="%E8%A7%A3%E9%A2%98-3" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E8%A7%A3%E9%A2%98-3" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>告诉了我们flag的位置了，直接构造php://filter/resource=/flag，获取flag</p>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://cdn.jsdelivr.net/gh/airesein/codr/RCE/zz3.png" alt="" />
+    
+  </figure>
+</p>
+
+
+<h2 class="relative group">远程包含 
+    <div id="%E8%BF%9C%E7%A8%8B%E5%8C%85%E5%90%AB" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E8%BF%9C%E7%A8%8B%E5%8C%85%E5%90%AB" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+
+
+<h3 class="relative group">题目 
+    <div id="%E9%A2%98%E7%9B%AE-4" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E9%A2%98%E7%9B%AE-4" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://cdn.jsdelivr.net/gh/airesein/codr/RCE/%E8%BF%9C%E7%A8%8B1.png" alt="" />
+    
+  </figure>
+</p>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://cdn.jsdelivr.net/gh/airesein/codr/RCE/%E8%BF%9C%E7%A8%8B2.png" alt="" />
+    
+  </figure>
+</p>
+
+
+<h3 class="relative group">解题 
+    <div id="%E8%A7%A3%E9%A2%98-4" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E8%A7%A3%E9%A2%98-4" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>看一下phpinfo</p>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://cdn.jsdelivr.net/gh/airesein/codr/RCE/%E8%BF%9C%E7%A8%8B3.png" alt="" />
+    
+  </figure>
+</p>
+<p>发现allow_url&hellip;.都是on,php://input是能用的，使用burp抓包，重放，构造，看一下上级目录</p>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://cdn.jsdelivr.net/gh/airesein/codr/RCE/yy1.png" alt="" />
+    
+  </figure>
+</p>
+<p>发现flag，进去 ，获得flag</p>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://cdn.jsdelivr.net/gh/airesein/codr/RCE/yy2.png" alt="" />
+    
+  </figure>
+</p>
+
+
+<h2 class="relative group">命令注入 
+    <div id="%E5%91%BD%E4%BB%A4%E6%B3%A8%E5%85%A5" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%91%BD%E4%BB%A4%E6%B3%A8%E5%85%A5" aria-label="锚点">#</a>
+    </span>        
+    
+</h2>
+
+
+<h3 class="relative group">题目 
+    <div id="%E9%A2%98%E7%9B%AE-5" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E9%A2%98%E7%9B%AE-5" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://cdn.jsdelivr.net/gh/airesein/codr/RCE/ml1.png" alt="" />
+    
+  </figure>
+</p>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://cdn.jsdelivr.net/gh/airesein/codr/RCE/ml2.png" alt="" />
+    
+  </figure>
+</p>
+
+
+<h3 class="relative group">解题 
+    <div id="%E8%A7%A3%E9%A2%98-5" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E8%A7%A3%E9%A2%98-5" aria-label="锚点">#</a>
+    </span>        
+    
+</h3>
+<p>题目中说了无过滤直接url中输入命令，用;隔开，先看一下目录</p>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://cdn.jsdelivr.net/gh/airesein/codr/RCE/ml3.png" alt="" />
+    
+  </figure>
+</p>
+<p>有2个文件，都进去看一下</p>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://cdn.jsdelivr.net/gh/airesein/codr/RCE/ml4.png" alt="" />
+    
+  </figure>
+</p>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://cdn.jsdelivr.net/gh/airesein/codr/RCE/ml5.png" alt="" />
+    
+  </figure>
+</p>
+<p>最终在26433137587301.php的源代码中发现了flag</p>
+<p>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://cdn.jsdelivr.net/gh/airesein/codr/RCE/flag.png" alt="" />
+    
+  </figure>
+</p>
 
           
           
@@ -1340,6 +1411,144 @@
 
 <h2 class="mt-8 text-2xl font-extrabold mb-10">相关文章</h2>
 <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+  
+  
+
+  <a href="/posts/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+
+      <div class="px-6 py-4">
+
+        
+        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/posts/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/">文件上传漏洞总结</div>
+        
+
+        <div class="text-sm text-neutral-500 dark:text-neutral-400">
+          
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  <time datetime="2025-02-14T00:00:00&#43;00:00">2025 年 2 月 14 日</time><span class="px-2 text-primary-500">&middot;</span><span>1863 字</span><span class="px-2 text-primary-500">&middot;</span><span title="预计阅读">4 分钟</span>
+  
+
+  
+  
+</div>
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/ctf/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    CTF
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E5%91%A8%E6%8A%A5/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    周报
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    文件上传
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E6%BC%8F%E6%B4%9E/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    漏洞
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/week4/&#34;,'_self');return false;">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Week4
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+</div>
+
+
+
+
+        </div>
+
+        
+      </div>
+      <div class="px-6 pt-4 pb-2">
+
+      </div>
+    </div>
+  </a>
+
   
   
 
@@ -1468,8 +1677,8 @@
           
         
       <script>
-        var oid = "views_posts\\文件上传漏洞总结.md"
-        var oid_likes = "likes_posts\\文件上传漏洞总结.md"
+        var oid = "views_posts\\RCE.md"
+        var oid_likes = "likes_posts\\RCE.md"
       </script>
       
       
@@ -1489,7 +1698,7 @@
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group mr-3" href="/posts/%E5%BB%BA%E7%AB%99%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/">
+            <a class="flex group mr-3" href="/posts/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E%E6%80%BB%E7%BB%93/">
               <span
                 class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
                 >&larr;</span
@@ -1501,11 +1710,11 @@
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >在建站中遇到的一些问题</span
+                  >文件上传漏洞总结</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2025-02-11T00:00:00&#43;00:00">2025 年 2 月 11 日</time>
+                    <time datetime="2025-02-14T00:00:00&#43;00:00">2025 年 2 月 14 日</time>
                   
                 </span>
               </span>
@@ -1513,28 +1722,6 @@
           
         </span>
         <span>
-          
-            <a class="flex text-right group ml-3" href="/posts/rce/">
-              <span class="flex flex-col">
-                <span
-                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >RCE</span
-                >
-                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
-                  
-                    <time datetime="2025-02-23T00:00:00&#43;00:00">2025 年 2 月 23 日</time>
-                  
-                </span>
-              </span>
-              <span
-                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
-                >&rarr;</span
-              >
-              <span
-                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
-                >&larr;</span
-              >
-            </a>
           
         </span>
       </div>
