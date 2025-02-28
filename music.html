@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        .container {
+            max-width: 400px;
+            width: 90%;
+            background: rgba(255, 255, 255, 0.4); /* 减少透明度 */
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .song-list {
+            list-style: none;
+            padding: 0;
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+        }
+
+        .song-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            margin: 10px 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .song-item:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* 滚动条样式 */
+        .song-list::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .song-list::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+        }
+
+        .song-list::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+
+        .player-control {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            flex-direction: column;
+        }
+
+        .progress-container {
+            width: 80%;
+            margin: 10px auto;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .progress-filled {
+            height: 100%;
+            background-color: #ff4d4d;
+            border-radius: 5px;
+            transition: width 0.3s;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .time-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            margin: 10px auto;
+        }
+
+        .current-time,
+        .duration {
+            font-size: 0.8em;
+            opacity: 0.7;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .control-btn {
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+
+        .control-btn:hover {
+            opacity: 0.8;
+        }
+
+        .play-btn {
+            background-image: url('https://img.icons8.com/fluency/48/000000/play.png');
+        }
+
+        .pause-btn {
+            background-image: url('https://img.icons8.com/fluency/48/000000/pause.png');
+        }
+
+        .prev-btn {
+            background-image: url('https://img.icons8.com/fluency/48/000000/previous.png');
+        }
+
+        .next-btn {
+            background-image: url('https://img.icons8.com/fluency/48/000000/next.png');
+        }
+
+        .control-btn {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 24px;
+        }
+
+        .sidebar {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .sidebar-btn {
+            width: 40px;
+            height: 40px;
+            margin: 10px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .sidebar-btn:hover {
+            opacity: 0.8;
+        }
+
+        .back-btn {
+            background-image: url('https://img.icons8.com/fluency/48/000000/back.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 24px;
+        }
+
+        .change-bg-btn {
+            background-image: url('https://img.icons8.com/fluency/48/000000/paint.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 24px;
+        }
+
+        .switch-theme-btn {
+            width: 40px;
+            height: 40px;
+            margin: 10px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+            background-image: url('https://img.icons8.com/fluency/48/000000/moon.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 24px;
+        }
+
+        .light-theme {
+            background-color: #ffffff;
+            color: #000000;
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        .light-theme .song-item {
+            background: rgba(0, 0, 0, 0.1);
+            color: #000000;
+        }
+
+        .light-theme .container {
+            background: #ffffff;
+        }
+
+        .light-theme .progress-bar {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .light-theme .progress-filled {
+            background-color: #ff4d4d;
+        }
+
+        .dark-theme {
+            background-color: #121212;
+            color: white;
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        .dark-theme .song-item {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .dark-theme .container {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        .dark-theme .progress-bar {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .dark-theme .progress-filled {
+            background-color: #ff4d4d;
+        }
+
+        .pagination {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .page-btn {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            cursor: pointer;
+            margin: 0 10px;
+            line-height: 40px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .current-page {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* 修复循环按钮的样式 */
+        .repeat-btn {
+            background-image: url('https://img.icons8.com/fluency/48/000000/refresh.png');
+        }
+
+        .repeat-btn.single {
+            background-image: url('https://img.icons8.com/fluency/48/000000/synchronize.png');
+        }
+
+        .repeat-btn.random {
+            background-image: url('https://img.icons8.com/fluency/48/000000/shuffle.png');
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>My Music Player</h1>
+        <div class="song-list">
+            <!-- Song items will be dynamically generated -->
+        </div>
+        <div class="player-control">
+            <div class="time-container">
+                <span class="current-time">0:00</span>
+                <span class="duration">0:00</span>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-filled"></div>
+                </div>
+            </div>
+            <div class="controls">
+                <div id="repeatBtn" class="control-btn repeat-btn list" title="Repeat Mode"></div>
+                <div id="prevBtn" class="control-btn prev-btn" title="Previous"></div>
+                <div id="playBtn" class="control-btn play-btn" title="Play"></div>
+                <div id="nextBtn" class="control-btn next-btn" title="Next"></div>
+                <div id="shuffleBtn" class="control-btn shuffle-btn" title="Shuffle"></div>
+            </div>
+        </div>
+        <div class="pagination">
+            <!-- Page buttons will be dynamically generated -->
+        </div>
+    </div>
+    <div class="sidebar">
+        <div id="backBtn" class="sidebar-btn back-btn" title="Back"></div>
+        <div id="changeBgBtn" class="sidebar-btn change-bg-btn" title="Change Background"></div>
+    </div>
+</body>
+<script>
+    // 音乐数据，你可以替换成自己的歌曲直链和名称
+    const songs = [
+        {
+            title: "千千万万",
+            url: "https://download.zoho.com.cn/v1/workdrive/previewdata/u4whz13023ca26dec4013905ddb6d66dc4980?orig=true&version=1.0"
+        },
+        {
+            title: "lovev story",
+            url: "https://download.zoho.com.cn/v1/workdrive/previewdata/u4whz2c382adfbdf04f20bbe1181cc99027d3?orig=true&version=1.0"
+        },
+        {
+            title: "群青",
+            url: "https://download.zoho.com.cn/v1/workdrive/previewdata/u4whz316a90dc6ec5422f9ea7cb94ff170bd2?orig=true&version=1.0"
+        },
+        {
+            title: "Let You Down",
+            url: "https://download.zoho.com.cn/v1/workdrive/previewdata/u4whzf854f7b9bc2f43438a1399c2b590d465?orig=true&version=1.0"
+        },
+        {
+            title: "Moon Halo",
+            url: "https://download.zoho.com.cn/v1/workdrive/previewdata/u4whz5865ba4d6833406aa9a1d0e4513b5990?orig=true&version=1.0"
+        },
+        {
+            title: "陈粒",
+            url: "https://download.zoho.com.cn/v1/workdrive/previewdata/u4whz73a1526727fe49a8900f39635e3dcf51?orig=true&version=1.0"
+        },
+        {
+            title: "slow down",
+            url: "https://download.zoho.com.cn/v1/workdrive/previewdata/u4whz3ad544df6eeb4aa3978f1f7b4d9027bc?orig=true&version=1.0"
+        },
+        {
+            title: "Speed of Light",
+            url: "https://download.zoho.com.cn/v1/workdrive/previewdata/u4whz61f2e5db0e684da284d22671b1bc0977?orig=true&version=1.0"
+        },
+        {
+            title: "たぶん",
+            url: "https://download.zoho.com.cn/v1/workdrive/previewdata/u4whz9980a8ee42264fc0a5ea42ebad8ba05e?orig=true&version=1.0"
+        },
+        {
+            title: "snooze",
+            url: "https://download.zoho.com.cn/v1/workdrive/previewdata/u4whz47a7e2ec65004b128bf214a16c0f6352?orig=true&version=1.0"
+        },
+        {
+            title: "アイオライト",
+            url: "https://download.zoho.com.cn/v1/workdrive/previewdata/u4whz45d0e951bd444fe487b9023ef50ef180?orig=true&version=1.0"
+        },
+        {
+            title: "aLIEz",
+            url: "https://download.zoho.com.cn/v1/workdrive/previewdata/u4whz97738b7ce5c94183b0885ebccc24c71f?orig=true&version=1.0"
+        },
+        {
+            title: "四季予你",
+            url: "https://download.zoho.com.cn/v1/workdrive/previewdata/u4whza88edc3acc46435f8faacf4718642c34?orig=true&version=1.0"
+        },
+        {
+            title: "ホームメイド",
+            url: "https://download.zoho.com.cn/v1/workdrive/previewdata/u4whz3340322853b04491b3db0ece60e43c53?orig=true&version=1.0"
+        },
+        {
+            title: "I Really Want to Stay at Your",
+            url: "https://download.zoho.com.cn/v1/workdrive/previewdata/u4whz62ce22ff78564b9b88f749962fc94fea?orig=true&version=1.0"
+        },
+        {
+            title: "極楽浄土",
+            url: "https://download.zoho.com.cn/v1/workdrive/previewdata/u4whz28fcc3d5dc4e4071937faa39837c6402?orig=true&version=1.0"
+        },
+        {
+            title: "第六感",
+            url: "https://download.zoho.com.cn/v1/workdrive/previewdata/u4whzeb1517935995400f906bcf8e081aa176?orig=true&version=1.0"
+        },
+        {
+            title: "没什么大不了（なんでもないや）",
+            url: "https://download.zoho.com.cn/v1/workdrive/previewdata/u4whzc1d171497cc048a3afa49457b0d52d9b?orig=true&version=1.0"
+        },
+        {
+            title: "起风了（英文）",
+            url: "https://download.zoho.com.cn/v1/workdrive/previewdata/u4whz6091c6ddeb70466eaab7b27615772b47?orig=true&version=1.0"
+        },
+        {
+            title: "IVORY TOWER(龙族)",
+            url: "https://download.zoho.com.cn/v1/workdrive/previewdata/u4whzeaa0ba444a994af8a9ab347e9a25b44c?orig=true&version=1.0"
+        }
+        // 添加更多歌曲
+    ];
+
+    // 背景图片直链（用户可以根据需要修改）
+    const backgroundImages = [
+        "https://previewengine.zohopublic.com.cn/image/WD/u4whz0618358b436042ebbd6736a0e7fa0a86?version=1.0&width=2046&height=1536",
+        "https://previewengine.zohopublic.com.cn/image/WD/u4whz4762a03bd1a3479a909cff8d248a7df7?version=1.0&width=2046&height=1536",
+        "https://previewengine.zohopublic.com.cn/image/WD/yhj4j7f2acb37aaa747ed89e5d7d428b46575?version=1.0&width=2046&height=1536",
+        "https://previewengine.zohopublic.com.cn/image/WD/yhj4j1d0645703ec14d9ca7a2341bca8e4efb?version=1.0&width=2046&height=1536",
+        "https://previewengine.zohopublic.com.cn/image/WD/yhj4j8b79de627f2b4acdafd6741caaab734c?version=1.0&width=2046&height=1536",
+        "https://previewengine.zohopublic.com.cn/image/WD/yhj4jcd0024c438054a6da588af55915fb62b?version=1.0&width=2046&height=1536",
+        "https://previewengine.zohopublic.com.cn/image/WD/yhj4j1158bc2ce97f49f99c98caf7df6573c2?version=1.0&width=2046&height=1536",
+        "https://previewengine.zohopublic.com.cn/image/WD/yhj4j9e319df1a66a46aa8bcc2294d92e129f?version=1.0&width=2046&height=1536",
+        "https://previewengine.zohopublic.com.cn/image/WD/yhj4jec40d11c257c4f5da50e940856adf561?version=1.0&width=2046&height=1536",
+        "https://previewengine.zohopublic.com.cn/image/WD/yhj4j5d1ff40a97c54462af1eaed98c2ac972?version=2.0&width=2046&height=1536",
+        "https://previewengine.zohopublic.com.cn/image/WD/u4whze950a342312044159f2fd8fc673693b9?version=1.0&width=2046&height=1536",
+        "https://previewengine.zohopublic.com.cn/image/WD/u4whzde54ea836290470d8debb609e55745ed?version=1.0&width=2046&height=1536",
+        "https://previewengine.zohopublic.com.cn/image/WD/u4whz0f34eb2319a745b9bda801b8d47a6a80?version=1.0&width=2046&height=1536",
+        "https://previewengine.zohopublic.com.cn/image/WD/u4whz64bdeeb21c6b441e9ea6255d94910c28?version=1.0&width=2046&height=1536",
+        "https://previewengine.zohopublic.com.cn/image/WD/u4whz1372e74fa66640218f223754f48ac48b?version=1.0&width=2046&height=1536",
+        "https://previewengine.zohopublic.com.cn/image/WD/u4whz5d76934de7294750b0651952ee9b7553?version=1.0&width=2046&height=1536",
+        "https://previewengine.zohopublic.com.cn/image/WD/u4whz00e56681af924f0f92e8ed08f3f29714?version=1.0&width=2046&height=1536",
+        "https://previewengine.zohopublic.com.cn/image/WD/u4whz61c3ace3325c4d25b194612c88c8bf29?version=1.0&width=2046&height=1536",
+        "https://previewengine.zohopublic.com.cn/image/WD/u4whz21eee83ab25b4991b005aa3c93293df3?version=1.0&width=2046&height=1536",
+        "https://previewengine.zohopublic.com.cn/image/WD/yhj4j66400d9c365049e3b529a79a1c8dac74?version=1.0&width=2046&height=1536",
+        "https://previewengine.zohopublic.com.cn/image/WD/yhj4jee579f5046064590920330803eeece6d?version=1.0&width=2046&height=1536",
+        "https://previewengine.zohopublic.com.cn/image/WD/yhj4j52c1b37f9f7e49e79d8672532b0e30fd?version=1.0&width=2046&height=1536",
+        "https://previewengine.zohopublic.com.cn/image/WD/yhj4jfbe5362eaa9d409d98a17d84d8710935?version=1.0&width=2046&height=1536"
+    ];
+
+    // 初始化音乐播放器
+    const audio = new Audio();
+    let currentSongIndex = 0;
+    let isShuffled = false;
+    let repeatMode = "list"; // "single", "list", "random"
+
+    // 加载歌曲列表
+    function loadSongList(page) {
+        const start = (page - 1) * itemsPerPage;
+        const end = start + itemsPerPage;
+        const songListElement = document.querySelector(".song-list");
+        songListElement.innerHTML = "";
+
+        songs.slice(start, end).forEach((song, index) => {
+            const li = document.createElement("li");
+            li.className = "song-item";
+            li.innerHTML = `
+                <div class="song-title">${song.title}</div>
+            `;
+            li.addEventListener("click", () => {
+                currentSongIndex = start + index;
+                loadAndPlaySong();
+            });
+            songListElement.appendChild(li);
+        });
+    }
+
+    // 加载并播放当前歌曲
+    function loadAndPlaySong() {
+        audio.src = songs[currentSongIndex].url;
+        audio.play();
+        updatePlayerUI();
+    }
+
+    // 更新播放器 UI
+    function updatePlayerUI() {
+        const songItems = document.querySelectorAll(".song-item");
+        songItems.forEach((item, index) => {
+            if (index === currentSongIndex % itemsPerPage) {
+                item.style.backgroundColor = "rgba(255, 255, 255, 0.3)";
+            } else {
+                item.style.backgroundColor = "rgba(255, 255, 255, 0.2)";
+            }
+        });
+    }
+
+    // 播放/暂停逻辑
+    const playBtn = document.getElementById("playBtn");
+    playBtn.addEventListener("click", () => {
+        if (audio.paused) {
+            audio.play();
+            playBtn.className = "control-btn pause-btn";
+        } else {
+            audio.pause();
+            playBtn.className = "control-btn play-btn";
+        }
+    });
+
+    // 进度条控制
+    const progressBar = document.querySelector(".progress-bar");
+    const progressFilled = document.querySelector(".progress-filled");
+    const progressContainer = document.querySelector(".progress-container");
+
+    audio.addEventListener("timeupdate", () => {
+        const progress = (audio.currentTime / audio.duration) * 100;
+        progressFilled.style.width = `${progress}%`;
+        updateCurrentTime();
+        updateDuration();
+    });
+
+    audio.addEventListener("loadedmetadata", () => {
+        updateDuration();
+    });
+
+    progressContainer.addEventListener("click", (e) => {
+        const width = progressContainer.offsetWidth;
+        const clickX = e.offsetX;
+        const time = (clickX / width) * audio.duration;
+        audio.currentTime = time;
+    });
+
+    // 时间显示
+    function updateCurrentTime() {
+        const currentTime = audio.currentTime;
+        const minutes = Math.floor(currentTime / 60);
+        const seconds = Math.floor(currentTime % 60);
+        document.querySelector(".current-time").textContent = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+    }
+
+    function updateDuration() {
+        const duration = audio.duration;
+        const minutes = Math.floor(duration / 60);
+        const seconds = Math.floor(duration % 60);
+        document.querySelector(".duration").textContent = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+    }
+
+    // 下一曲/上一曲
+    const nextBtn = document.getElementById("nextBtn");
+    const prevBtn = document.getElementById("prevBtn");
+
+    nextBtn.addEventListener("click", () => {
+        if (repeatMode === "random") {
+            currentSongIndex = Math.floor(Math.random() * songs.length);
+        } else {
+            currentSongIndex = (currentSongIndex + 1) % songs.length;
+        }
+        loadAndPlaySong();
+    });
+
+    prevBtn.addEventListener("click", () => {
+        currentSongIndex = currentSongIndex === 0 ? songs.length - 1 : currentSongIndex - 1;
+        loadAndPlaySong();
+    });
+
+    // 循环模式
+    const repeatBtn = document.getElementById("repeatBtn");
+    repeatBtn.addEventListener("click", () => {
+        if (repeatMode === "list") {
+            repeatMode = "single";
+            repeatBtn.classList.remove("list");
+            repeatBtn.classList.add("single");
+        } else if (repeatMode === "single") {
+            repeatMode = "random";
+            repeatBtn.classList.remove("single");
+            repeatBtn.classList.add("random");
+        } else {
+            repeatMode = "list";
+            repeatBtn.classList.remove("random");
+        }
+    });
+
+    audio.addEventListener("ended", () => {
+        if (repeatMode === "single") {
+            audio.currentTime = 0;
+            audio.play();
+        } else if (repeatMode === "random") {
+            currentSongIndex = Math.floor(Math.random() * songs.length);
+            loadAndPlaySong();
+        } else {
+            currentSongIndex = (currentSongIndex + 1) % songs.length;
+            loadAndPlaySong();
+        }
+    });
+
+    // 分页按钮
+    function createPagination() {
+        const totalPages = Math.ceil(songs.length / itemsPerPage);
+        const paginationElement = document.querySelector(".pagination");
+        paginationElement.innerHTML = "";
+
+        for (let i = 1; i <= totalPages; i++) {
+            const btn = document.createElement("div");
+            btn.className = "page-btn";
+            btn.textContent = i;
+            if (i === currentPage) {
+                btn.classList.add("current-page");
+            }
+            btn.addEventListener("click", () => {
+                currentPage = i;
+                loadSongList(currentPage);
+                createPagination();
+            });
+            paginationElement.appendChild(btn);
+        }
+    }
+
+    // 返回按钮
+    const backBtn = document.getElementById("backBtn");
+    backBtn.addEventListener("click", () => {
+        window.location.href = "https://example.com"; // 替换为你的返回链接
+    });
+
+    // 背景切换
+    const changeBgBtn = document.getElementById("changeBgBtn");
+
+    // 随机加载初始背景
+    window.onload = function() {
+        const randomIndex = Math.floor(Math.random() * backgroundImages.length);
+        document.body.style.backgroundImage = `url(${backgroundImages[randomIndex]})`;
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundPosition = "center";
+    };
+
+    changeBgBtn.addEventListener("click", () => {
+        const randomIndex = Math.floor(Math.random() * backgroundImages.length);
+        document.body.style.backgroundImage = `url(${backgroundImages[randomIndex]})`;
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundPosition = "center";
+    });
+
+    // 分页设置
+    const itemsPerPage = 5;
+    let currentPage = 1;
+
+    // 加载初始歌曲和分页
+    loadSongList(currentPage);
+    createPagination();
+
+    // 添加切换主题功能
+    const switchThemeBtn = document.createElement("div");
+    switchThemeBtn.className = "sidebar-btn switch-theme-btn";
+    switchThemeBtn.id = "switchThemeBtn";
+    switchThemeBtn.title = "Switch Theme";
+
+    document.querySelector(".sidebar").prepend(switchThemeBtn);
+
+    let isDarkMode = true;
+
+    switchThemeBtn.addEventListener("click", () => {
+        if (isDarkMode) {
+            document.body.classList.add("light-theme");
+            document.body.classList.remove("dark-theme");
+            isDarkMode = false;
+        } else {
+            document.body.classList.add("dark-theme");
+            document.body.classList.remove("light-theme");
+            isDarkMode = true;
+        }
+    });
+
+    // 默认启用暗色模式
+    document.body.classList.add("dark-theme");
+</script>
+</html>
