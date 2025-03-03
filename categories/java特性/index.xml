@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java特性 on AireSein&#39;s Blog</title>
+    <link>http://localhost:1313/categories/java%E7%89%B9%E6%80%A7/</link>
+    <description>Recent content in Java特性 on AireSein&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <managingEditor>airesein@gmail.com (AireSein)</managingEditor>
+    <webMaster>airesein@gmail.com (AireSein)</webMaster>
+    <copyright>© 2025 AireSein</copyright>
+    <lastBuildDate>Mon, 03 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/java%E7%89%B9%E6%80%A7/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>java01 java的地位</title>
+      <link>http://localhost:1313/posts/java01-java%E7%9A%84%E5%9C%B0%E4%BD%8D/</link>
+      <pubDate>Mon, 03 Mar 2025 00:00:00 +0000</pubDate>
+      <author>airesein@gmail.com (AireSein)</author>
+      <guid>http://localhost:1313/posts/java01-java%E7%9A%84%E5%9C%B0%E4%BD%8D/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>
