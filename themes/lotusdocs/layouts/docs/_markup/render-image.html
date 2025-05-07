@@ -1,0 +1,12 @@
+
+{{ $dest := .Destination }}
+{{ $text := .PlainText }}
+
+{{ if .Title }}
+  <figure>
+    <img src="{{ $dest | safeURL }}" alt="{{ $text }}" loading="lazy">
+    <figcaption>{{ .Title | markdownify }}</figcaption>
+  </figure>
+{{ else }}
+  <img src="{{ $dest | safeURL }}" alt="{{ $text }}" loading="lazy">
+{{ end }}
