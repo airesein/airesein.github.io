@@ -1,0 +1,5 @@
+[build]
+  command = "hugo --gc --minify"
+
+[context.production.environment]
+  HUGO_VERSION = "0.121.2-extended"  # 注意-extended后缀
